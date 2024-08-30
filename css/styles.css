@@ -55,12 +55,27 @@ body {
   position: relative;
 }
 
+.input-search {
+  border: 0px !important;
+  border: 2px solid #ccc;
+  border-width: 0px;
+  padding: 8px;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-search:focus {
+  box-shadow: 0 0 5px #00fe0d;
+
+}
+
 .search .input-search{
   margin: auto 5px;
   width: 100%;
   padding: 15px;
   border: 0px;
-  border-width: 0px;
+  border-width: 0px !important;
   border-radius: 25px;
   background-color: transparent;
 }
@@ -103,8 +118,8 @@ body {
 }
 
 .nav-Profiles{
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   margin-bottom: 5px;
   border: 1px solid gray;
   border-radius: 50%;
@@ -255,12 +270,15 @@ body {
 
 .head-sid-icon-setting{
   text-align: end;
-  font-size: 18px;
   padding: 5px; 
-  
+}
+.head-sid-icon-setting a{
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
 }
 .accordion {
-  width: 95%;
+  width: 100%;
   max-width: 600px;
   margin: 5px auto;
   padding: 10px;
@@ -343,13 +361,6 @@ body {
 
 
 
-/* .sidebar {
-  width: 350px;
-  background-color: #f4f4f4;
-  padding: 20px;
-  box-sizing: border-box;
-} */
-
 
 
 
@@ -394,8 +405,8 @@ body {
 }
 .content {
   flex: 1;
-  padding: 20px;
-  background-color: #fff;
+  padding: 20px 40px; 
+  /* background-color: #fff; */
   overflow-y: auto;
 }
 .content-header {
@@ -422,79 +433,177 @@ body {
   font-size: 16px;
   color: var(--secand-color);
   border: 0;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
 }
 
+.sort-by select {
+  padding: 5px;
+  border-radius: 4px;
+}
 
-  /*  --------------------- */
+.sort-by select:focus {
+  /* box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); */
+  box-shadow: 0 0 5px ;
+}
 
-    .alert-form-switch{
-      display: flex; 
-      align-items: center;
-      padding: 15px;
-      margin: 10px auto ;
-      color: var(--color-white);
-      justify-content: space-between;
-      background-color: var(--main-color);
-      border-radius: 3px;
-    }
-    .alert-form-switch h3{
-      padding:0px ;
-      padding-bottom: 5px;
-      margin: 0px  ;
-    }
+/*  --------------------- */
 
-    .form-switch{
-      display: flex;
-      align-items: center;
-    }
-    .form-check-input {
-      width: 50px;
-      height: 25px;
-      background-color: var(--secand-color);
-      border-radius: 20px;
-      position: relative;
-      appearance: none;
-      -webkit-appearance: none;
-      outline: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
-    }
+  .alert-form-switch{
+    display: flex; 
+    align-items: center;
+    padding: 15px;
+    margin: 10px auto ;
+    color: var(--color-white);
+    justify-content: space-between;
+    background-color: var(--main-color);
+    border-radius: 3px;
+  }
+  .alert-form-switch h3{
+    padding:0px ;
+    padding-bottom: 5px;
+    margin: 0px  ;
+  }
 
-    .form-check-input:checked {
-      background-color: var(--secand-color);
-    }
+  .form-switch{
+    display: flex;
+    align-items: center;
+  }
+  .form-check-input {
+    width: 50px;
+    height: 25px;
+    background-color: var(--secand-color);
+    border-radius: 20px;
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
 
-    .form-check-input::before {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 20px;
-      height: 20px;
-      /* z-index: -11; */
-      background-color: #fff;
-      border-radius: 50%;
-      transition: transform 0.3s ease-in-out;
-    }
+  .form-check-input:checked {
+    background-color: var(--secand-color);
+  }
 
-    .form-check-input:checked::before {
-      transform: translateX(20px);
-    }
+  .form-check-input::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
 
-    .form-check-label {
-      color: #fff;
-      margin-right: 10px;
-    }
+  .form-check-input:checked::before {
+    transform: translateX(20px);
+  }
 
-    .card{
-      margin: 10px auto;
-      padding: 10px 20px;
-      background-color: #eaf4ea;
-    }
+  .form-check-label {
+    color: #fff;
+    margin-right: 10px;
+  }
 
-  /* ------------------------------ */
+  .card{
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #eaf4ea;
+    border: 2px solid #45a0496a ;
+    border-radius: 5px;
+  }
+
+  .card .card-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card .card-head .card-head-first{
+    display: flex;
+    align-items: center;
+  }
+
+  .contain-img{
+    width: 70px;
+    aspect-ratio: 4/1;
+    margin-right: 10px;
+  }
+
+  .card .card-head img{
+    width: 100%;
+    object-fit: contain;
+
+  }
+  .card-head-text h3{
+    padding: 0px;
+    margin: 0px !important;
+    margin-bottom: 10px !important;
+  }
+  .card-head-text span{
+    color: #4caf50;
+  }
+  .card .card-icon-heart{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: 3px;
+    color: gray
+  }
+
+  .card-body{
+    margin: 15px auto ;
+  }
+
+  .card-body small{
+    margin: 5px;
+    color: gray;
+  }
+
+  .card-lab-jop{
+    margin-top: 10px;
+  }
+  .card-lab-jop span{
+    background-color: #fff;
+    margin-right: 5px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: gray;
+    font-size: 14px;
+  }
+  .card-footer{
+    color: gray;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+
+    margin-top: 30px;
+    padding: 20px 0px;
+  }
+
+/* ------------------------------ */
 
 /* --------------- end content ------------------------ */
+
+/* --------------- Start sidebar-end ------------------------ */
+
+.sidebar-end {
+  width: 450px;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* --------------- end sidebar-end ------------------------ */
 
 
 .job-listings {
